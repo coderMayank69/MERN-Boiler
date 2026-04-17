@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: ./Backend
+    container_name: mern-backend
+    env_file:
+      - ./Backend/.env
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./Frontend
+    container_name: mern-frontend
+    environment:
+      - VITE_API_BASE_URL=http://localhost:5000/api
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

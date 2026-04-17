@@ -1,0 +1,21 @@
+# OS / Editor
+.DS_Store
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+Backend/.env
+Frontend/.env
+
+# Dependencies
+Backend/node_modules/
+Frontend/node_modules/
+
+# Build output
+Frontend/dist/
+
+# Coverage
+coverage/
